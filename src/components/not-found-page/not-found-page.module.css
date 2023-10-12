@@ -1,8 +1,9 @@
-.main{
+.container{
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 38px;
 }
 .image{
     align-self: center;

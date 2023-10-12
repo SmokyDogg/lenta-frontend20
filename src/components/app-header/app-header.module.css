@@ -6,6 +6,7 @@
 .logo{
     width: 150px;
     height: 34px;
+    cursor: pointer;
 }
 
 .profile{

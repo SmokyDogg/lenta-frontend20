@@ -4,17 +4,23 @@ import { Input } from "../ui/input/input";
 import { Button } from "../ui/button/button";
 import { AppHeader } from "../app-header/app-header";
 
-export const Auth = () => {
+export const AuthPage = () => {
+
+    const Console = (e) => {
+        console.log("fuck")
+    }
+
     return (
         <div>
-            <AppHeader/>
+            <AppHeader />
             <h1 className={styles.main}>Авторизация</h1>
             <form className={styles.form}>
                 <Input
                     placeholder={"Введите e-mail"}
-                    maxLength={100}
+                    maxLength={150}
                     isLimitText={false}
-                    max={150}
+                    max={1234}
+                    type='email'
                 />
                 <Input
                     placeholder={"Введите пароль"}
@@ -22,13 +28,12 @@ export const Auth = () => {
                     isLimitText={false}
                     max={150}
                 />
-                <Button 
-                    text="Войти"
-                    extraClass={styles.button}
-                    isLoader={false}
-                    disabled={true}
-                    textClass={styles.text}
-                    />
+                <Button
+                    className={styles.button}
+                    onClick={() => Console()}
+                >
+                    Войти
+                </Button>
             </form>
         </div>
 

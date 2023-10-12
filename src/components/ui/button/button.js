@@ -1,36 +1,40 @@
 import React from "react";
 import styles from "./button.module.css"
-import loaderIcon from "../../../images/Rolling-1.3s-201px.svg"
+import loaderIcon from "../../../images/Rolling-1.3s-201px.svg";
+import PropTypes from 'prop-types';
+import classNames from "classnames";
 
 export const Button = ({
-  text,
-  extraClass = "",
-  type = "button",
-  isLoader = false,
-  disabled,
-  textClass = "",
-  ...rest
+  children, onClick, className, disabled, active
 }) => {
-  const className = `text text_type_button text_color_primary ${
-    styles.button
-  }
-    isLoader && styles.loader
-  } ${extraClass}`;
+  const classes = classNames(
+    'btn',
+    className, 
+    { active }
+  )
 
-  return (
+  return(
     <button
-      className={className}
-      type="button"
-      disabled={isLoader || disabled}
-      {...rest}
-    >
-      {isLoader ? (
-        <img className={styles.loader_icon} src={loaderIcon} alt="Загрузка." />
-      ) : (
-        <>
-          <p className={textClass}>{text}</p>
-        </>
-      )}
+      className={classes}
+      disabled={disabled}
+      onClick={onClick}
+      >
+      {children}
     </button>
-  );
-};
+  )
+}
+
+Button.propTypes = {
+  children: PropTypes.node,
+  onClick: PropTypes.func,
+  className: PropTypes.string,
+  disabled: PropTypes.bool,
+  active: PropTypes.bool
+}
+
+Button.defaultProps = {
+  children: "Кнопка",
+  className: "",
+  disabled: false,
+  active: false
+}

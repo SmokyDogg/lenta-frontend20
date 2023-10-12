@@ -3,32 +3,26 @@ import notfound404 from "../../images/404.png";
 import styles from "./not-found-page.module.css"
 import { Button } from "../ui/button/button";
 import { useNavigate } from "react-router-dom";
+import { AppHeader } from "../app-header/app-header";
 
-export const NotFound = () => {
-    function GoToHome() {
-        const navigate = useNavigate();
-      
-        useEffect(() => {
-          setTimeout(() => {
-            navigate('/', { replace: true });
-          }, 3000);
-        }, []);
-    }
+export const NotFoundPage = () => {
+    const navigate = useNavigate();
+
     return (
         <div className={styles.main}>
-            <img className={styles.image} src={notfound404} alt="404" />
-            <div className={styles.navigation}>
-                <h1 className={styles.title}>404</h1>
-                <p className={styles.text}>Запрашиваемая страница не существует, попробуйте вернуться </p>
-                <Button
-                    text="На главную"
-                    extraClass={styles.button}
-                    isLoader={false}
-                    disabled={true}
-                    textClass={styles.text}>
-                    onClick={GoToHome()}
-                </Button>
+            <div className={styles.container}>
+                <img className={styles.image} src={notfound404} alt="404" />
+                <div className={styles.navigation}>
+                    <h1 className={styles.title}>404</h1>
+                    <p className={styles.text}>Запрашиваемая страница не существует, попробуйте вернуться </p>
+                    <Button
+                        className={styles.button}
+                        onClick={() => navigate('/')}>
+                        На главную
+                    </Button>
+                </div>
             </div>
+
         </div>
     )
 
