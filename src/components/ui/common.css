@@ -1,0 +1,25 @@
+:root {
+    --common-border-radius: 12px;
+  
+    --text-color-primary: #292929;
+    --text-color-secondary: #fff;
+  
+    --text-color-h1: #141414;
+    --text-color-black: #000;
+    --text-color-input: #4D4D4D;
+    --text-input-placeholder: #888888;
+  
+    --bg-input-hover: #fafafa;
+    --bg-input-disabled: #ebebeb;
+  
+    --bg-button-default: #85cfff;
+    --bg-button-hover: #5cbfff;
+    --bg-button-active: #1fa7ff;
+    --bg-button-disabled: #e0e0e0;
+  
+    --default-color: #0032ff;
+    --changing-color: #d252e1;
+    --modified-color: #7fe051;
+  
+    --common-transition: all 0.3s ease-in;
+  }
